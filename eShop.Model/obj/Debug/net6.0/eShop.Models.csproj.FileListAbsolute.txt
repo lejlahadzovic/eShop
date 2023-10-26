@@ -1,0 +1,11 @@
+C:\Users\Lejla\projects\eShop\eShop.Model\bin\Debug\net6.0\eShop.Models.deps.json
+C:\Users\Lejla\projects\eShop\eShop.Model\bin\Debug\net6.0\eShop.Models.dll
+C:\Users\Lejla\projects\eShop\eShop.Model\bin\Debug\net6.0\eShop.Models.pdb
+C:\Users\Lejla\projects\eShop\eShop.Model\obj\Debug\net6.0\eShop.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lejla\projects\eShop\eShop.Model\obj\Debug\net6.0\eShop.Models.AssemblyInfoInputs.cache
+C:\Users\Lejla\projects\eShop\eShop.Model\obj\Debug\net6.0\eShop.Models.AssemblyInfo.cs
+C:\Users\Lejla\projects\eShop\eShop.Model\obj\Debug\net6.0\eShop.Models.csproj.CoreCompileInputs.cache
+C:\Users\Lejla\projects\eShop\eShop.Model\obj\Debug\net6.0\eShop.Models.dll
+C:\Users\Lejla\projects\eShop\eShop.Model\obj\Debug\net6.0\refint\eShop.Models.dll
+C:\Users\Lejla\projects\eShop\eShop.Model\obj\Debug\net6.0\eShop.Models.pdb
+C:\Users\Lejla\projects\eShop\eShop.Model\obj\Debug\net6.0\ref\eShop.Models.dll
