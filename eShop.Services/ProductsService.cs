@@ -19,7 +19,7 @@ namespace eShop.Services
         };
         public IList<Products> Get()
         {
-            throw new NotImplementedException();
+            return products;
         }
     }
 }
