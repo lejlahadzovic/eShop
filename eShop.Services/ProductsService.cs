@@ -1,4 +1,5 @@
 ﻿using eShop.Models;
+using eShop.Services.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +10,26 @@ namespace eShop.Services
 {
     public class ProductsService : IProductsService
     {
-        List<Products> products = new List<Products>()
+        EProdajaContext _context;
+        public ProductsService(EProdajaContext context)
         {
-            new Products()
-            {
-                Id=1,
-                Name="Laptop"
-            }
-        };
-        public IList<Products> Get()
-        {
-            return products;
+            _context = context;
         }
+
+        //List<Proizvodi> products = new List<Proizvodi>()
+        //{
+        //    new Proizvodi()
+        //    {
+        //        ProizvodId=1,
+        //        Naziv="Laptop"
+        //    }
+        //};
+        public IList<Proizvodi> Get()
+        {
+            var list = _context.Proizvodis.ToList();
+
+            return list;
+        }
+
     }
 }

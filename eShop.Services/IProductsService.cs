@@ -1,4 +1,5 @@
 ﻿using eShop.Models;
+using eShop.Services.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace eShop.Services
 {
     public interface IProductsService
     {
-        IList<Products> Get();
+        IList<Proizvodi> Get();
     }
 }

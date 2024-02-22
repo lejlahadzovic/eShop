@@ -1,5 +1,6 @@
 using eShop.Models;
 using eShop.Services;
+using eShop.Services.Database;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eShop.Controllers
@@ -10,16 +11,13 @@ namespace eShop.Controllers
     {
         private readonly IProductsService _productsService;
 
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public ProductsController(ILogger<WeatherForecastController> logger, IProductsService productsService)
+        public ProductsController(IProductsService productsService)
         {
-            _logger = logger;
             _productsService = productsService;
         }
 
         [HttpGet()]
-        public IEnumerable<Products> GetProducts()
+        public IEnumerable<Proizvodi> GetProducts()
         {
             return _productsService.Get();
         }
