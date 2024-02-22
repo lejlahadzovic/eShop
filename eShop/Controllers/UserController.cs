@@ -25,7 +25,7 @@ namespace eShop.Controllers
         {
             return _userservice.Insert(request);
         }
-        [HttpPut()]
+        [HttpPut("{id}")]
         public Models.Korisnik Update(int id,UserUpdateRequest request)
         {
             return _userservice.Update(id,request);
