@@ -7,11 +7,11 @@ namespace eShop.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProizvodController : ControllerBase
     {
-        private readonly IProductsService _productsService;
+        private readonly IProizodiService _productsService;
 
-        public ProductsController(IProductsService productsService)
+        public ProizvodController(IProizodiService productsService)
         {
             _productsService = productsService;
         }

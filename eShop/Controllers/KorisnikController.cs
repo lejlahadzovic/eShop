@@ -8,17 +8,17 @@ namespace eShop.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UserController : ControllerBase
+    public class KorisnikController : ControllerBase
     {
-        private readonly IUserService _userservice;
-        public UserController( IUserService userservice)
+        private readonly IKorisniciService _userservice;
+        public KorisnikController( IKorisniciService userservice)
         {
             _userservice = userservice;
         }
         [HttpGet()]
-        public List<Models.Korisnik> GetUser()
+        public async Task<List<Models.Korisnik>> GetUser()
         {
-            return _userservice.Get();
+            return await _userservice.Get();
         }
         [HttpPost()]
         public Models.Korisnik Insert(UserInsertRequest request)

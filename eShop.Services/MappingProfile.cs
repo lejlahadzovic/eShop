@@ -14,6 +14,8 @@ namespace eShop.Services
             CreateMap<Database.Korisnici, Models.Korisnik>();
             CreateMap<UserInsertRequest,Database.Korisnici>();
             CreateMap<UserUpdateRequest, Database.Korisnici>();
+            CreateMap<Database.JediniceMjere,Models.JedinicaMjere>();
+            CreateMap<Database.VrsteProizvodum, Models.VrsteProizvoda>();
         }
     }
 }

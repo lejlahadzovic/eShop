@@ -8,9 +8,9 @@ using eShop.Models.Request;
 
 namespace eShop.Services
 {
-    public interface IUserService
+    public interface IKorisniciService
     {
-        List<Models.Korisnik> Get();
+        Task<List<Models.Korisnik>> Get();
         Models.Korisnik Insert(UserInsertRequest request);
         Models.Korisnik Update(int id, UserUpdateRequest request);
     }

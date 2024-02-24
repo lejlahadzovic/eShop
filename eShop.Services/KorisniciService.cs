@@ -3,6 +3,7 @@ using Azure.Core;
 using eShop.Models;
 using eShop.Models.Request;
 using eShop.Services.Database;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,18 +13,18 @@ using System.Threading.Tasks;
 
 namespace eShop.Services
 {
-    public class UserService : IUserService
+    public class KorisniciService : IKorisniciService
     {
         protected EProdajaContext _context;
         public IMapper _mapper {  get; set; }
-        public UserService(EProdajaContext context,IMapper mapper)
+        public KorisniciService(EProdajaContext context,IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
-        public List<Models.Korisnik> Get()
+        public async Task<List<Models.Korisnik>> Get()
         {
-            var etityLsit= _context.Korisnicis.ToList();
+            var etityLsit = await _context.Korisnicis.ToListAsync();
             return _mapper.Map<List<Models.Korisnik>>(etityLsit);
         }
         public Korisnik Insert(UserInsertRequest request)
