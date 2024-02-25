@@ -18,7 +18,6 @@ namespace eShop.Services
         public IList<Proizvodi> Get()
         {
             var list = _context.Proizvodis.ToList();
-
             return list;
         }
     }
