@@ -20,7 +20,6 @@ namespace eShop.Services
             _context = context;
             _mapper = mapper;
         }
-
         public virtual async Task<PagedResult<T>> Get(TSearch? search = null)
         {
             var query = _context.Set<TDb>().AsQueryable();
@@ -43,7 +42,6 @@ namespace eShop.Services
         {
             var entity =await _context.Set<TDb>().FindAsync(id);
             return _mapper.Map<T>(entity);
-
         }
     }
 }

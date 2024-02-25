@@ -10,12 +10,10 @@ namespace eShop.Controllers
     public class ProizvodController : ControllerBase
     {
         private readonly IProizodiService _productsService;
-
         public ProizvodController(IProizodiService productsService)
         {
             _productsService = productsService;
         }
-
         [HttpGet()]
         public IEnumerable<Proizvodi> GetProducts()
         {

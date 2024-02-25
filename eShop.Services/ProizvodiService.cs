@@ -21,6 +21,5 @@ namespace eShop.Services
 
             return list;
         }
-
     }
 }
