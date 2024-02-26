@@ -1,4 +1,6 @@
 ﻿using eShop.Models;
+using eShop.Models.Request;
+using eShop.Models.SearchObjects;
 using eShop.Services.Database;
 using System;
 using System.Collections.Generic;
@@ -6,11 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace eShop.Services
 {
-    public interface IProizodiService
+    public interface IProizodiService:ICRUDService<Models.Proizvod, ProizvodSearchObject, ProizvodInsertRequest, ProizvodUpdateRequest>
     {
-        IList<Proizvodi> Get();
+        Task<Proizvod> Activate(int id);
     }
 }

@@ -1,24 +1,41 @@
-﻿using eShop.Models;
+﻿using AutoMapper;
+using eShop.Models;
+using eShop.Models.Request;
+using eShop.Models.SearchObjects;
 using eShop.Services.Database;
+using eShop.Services.ProizvodiStateMachine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace eShop.Services
 {
-    public class ProizvodiService : IProizodiService
+    public class ProizvodiService : BaseCRUDService<Models.Proizvod, Database.Proizvodi, ProizvodSearchObject, ProizvodInsertRequest, ProizvodUpdateRequest>, IProizodiService
     {
-        EProdajaContext _context;
-        public ProizvodiService(EProdajaContext context)
+        public BaseState _baseState { get; set; }
+        public ProizvodiService(BaseState baseState, EProdajaContext context, IMapper mapper) : base(context, mapper)
         {
-            _context = context;
+            _baseState = baseState;
         }
-        public IList<Proizvodi> Get()
+        public override Task<Proizvod> Insert(ProizvodInsertRequest insert)
         {
-            var list = _context.Proizvodis.ToList();
-            return list;
+            var state = _baseState.CreateState("initial");
+            return state.Insert(insert);
+        }
+        public override async Task<Proizvod> Update(int id, ProizvodUpdateRequest update)
+        {
+            var entity = await _context.Proizvodis.FindAsync(id);
+            var state = _baseState.CreateState(entity.StateMachine);
+            return await state.Update(id, update);
+        }
+        public async Task<Proizvod> Activate(int id)
+        {
+            var entity = await _context.Proizvodis.FindAsync(id);
+            var state = _baseState.CreateState(entity.StateMachine);
+            return await state.Activate(id);
         }
     }
 }

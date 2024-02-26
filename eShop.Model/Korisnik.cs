@@ -12,6 +12,7 @@ namespace eShop.Models
         public string? Telefon { get; set; }
         public string KorisnickoIme { get; set; } = null!;
         public bool? Status { get; set; }
+        public virtual ICollection<KorisnikUloga> KorisniciUloges { get; set; } = new List<KorisnikUloga>();
     }
 }
 

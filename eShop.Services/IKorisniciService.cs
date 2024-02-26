@@ -5,13 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using eShop.Models.Request;
+using eShop.Models.SearchObjects;
 
 namespace eShop.Services
 {
-    public interface IKorisniciService
+    public interface IKorisniciService : ICRUDService<Models.Korisnik, KorisniciSearchObject,UserInsertRequest,UserUpdateRequest>
     {
-        Task<List<Models.Korisnik>> Get();
-        Models.Korisnik Insert(UserInsertRequest request);
-        Models.Korisnik Update(int id, UserUpdateRequest request);
     }
 }
