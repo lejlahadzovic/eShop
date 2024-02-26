@@ -19,5 +19,15 @@ namespace eShop.Controllers
         {
             return await (_service as IProizodiService).Activate(id);
         }
+        [HttpPut("{id}/hide")]
+        public virtual async Task<Proizvod> Hide(int id)
+        {
+            return await (_service as IProizodiService).Hide(id);
+        }
+        [HttpGet("{id}/allowedActions")]
+        public virtual async Task<List<string>> AllowedActions(int id)
+        {
+            return await (_service as IProizodiService).AllowedActions(id);
+        }
     }
 }

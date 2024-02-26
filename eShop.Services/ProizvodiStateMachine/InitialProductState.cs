@@ -24,5 +24,11 @@ namespace eShop.Services.ProizvodiStateMachine
             await _context.SaveChangesAsync();
             return _mapper.Map<Proizvod>(entity);
         }
+        public override async Task<List<string>> AllowedActions()
+        {
+            var list= await base.AllowedActions();
+            list.Add("Insert");
+            return list;
+        }
     }
 }

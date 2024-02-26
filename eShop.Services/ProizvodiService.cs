@@ -37,5 +37,17 @@ namespace eShop.Services
             var state = _baseState.CreateState(entity.StateMachine);
             return await state.Activate(id);
         }
+        public async Task<Proizvod> Hide(int id)
+        {
+            var entity = await _context.Proizvodis.FindAsync(id);
+            var state = _baseState.CreateState(entity.StateMachine);
+            return await state.Hide(id);
+        }
+        public async Task<List<string>> AllowedActions(int id)
+        {
+            var entity = await _context.Proizvodis.FindAsync(id);
+            var state = _baseState.CreateState(entity?.StateMachine);
+            return await state.AllowedActions();
+        }
     }
 }

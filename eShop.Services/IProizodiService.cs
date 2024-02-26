@@ -13,5 +13,7 @@ namespace eShop.Services
     public interface IProizodiService:ICRUDService<Models.Proizvod, ProizvodSearchObject, ProizvodInsertRequest, ProizvodUpdateRequest>
     {
         Task<Proizvod> Activate(int id);
+        Task<Proizvod> Hide(int id);
+        Task<List<string>> AllowedActions(int id);
     }
 }

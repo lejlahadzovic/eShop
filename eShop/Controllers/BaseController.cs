@@ -1,11 +1,13 @@
 ﻿using eShop.Models;
 using eShop.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace eShop.Controllers
 {
     [Route("[controller]")]
+    [Authorize]
     public class BaseController<T, TSearch> : ControllerBase where T : class where TSearch : class
     {
         protected readonly IService<T,TSearch> _service;
