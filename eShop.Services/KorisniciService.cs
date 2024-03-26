@@ -54,5 +54,20 @@ namespace eShop.Services
             }
             return base.AddInclude(query, search);
         }
+
+        public async Task<Korisnik> Login(string username, string password)
+        {
+            var entity = await _context.Korisnicis.Include("KorisniciUloges.Uloga").FirstOrDefaultAsync(x => x.KorisnickoIme == username);
+            if(entity == null)
+            {
+                return null;
+            }
+            var hash = GenerateHash(entity.LozinkaSalt, password);
+            if(hash!=entity.LozinkaHash)
+            {
+                return null;
+            }
+            return _mapper.Map<Korisnik>(entity);
+        }
     }
 }

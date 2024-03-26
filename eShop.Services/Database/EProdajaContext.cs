@@ -47,8 +47,8 @@ public partial class EProdajaContext : DbContext
 
     public virtual DbSet<VrsteProizvodum> VrsteProizvoda { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=eProdaja;Trusted_Connection=True;TrustServerCertificate=True");
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //    => optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=eProdaja;Trusted_Connection=True;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

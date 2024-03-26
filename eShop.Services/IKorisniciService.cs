@@ -11,5 +11,6 @@ namespace eShop.Services
 {
     public interface IKorisniciService : ICRUDService<Models.Korisnik, KorisniciSearchObject,UserInsertRequest,UserUpdateRequest>
     {
+        public Task<Models.Korisnik> Login(string username, string password); 
     }
 }
